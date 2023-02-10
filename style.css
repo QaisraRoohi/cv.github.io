@@ -1,0 +1,859 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Amiri Quran", serif;
+  font-family: "Rubik", sans-serif;
+  font-size: 62.5%;
+  cursor: default;
+  color: #fff;
+  background-color: #0c0c13;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 0%);
+  overflow-x: hidden;
+}
+
+:root {
+  --heading: rgb(0 10 45);
+  --color: #bdc1c7;
+  --hover: #e4e4e4;
+  --bgcolor: firebrick;
+  --helper-tint: #f3f4ff;
+  --bg: url(../CV/img/bg.png) repeat;
+  --footer-bg: rgba(112, 128, 144, 0.098);
+  --gradient: linear-gradient (rgb(235, 51, 73) 0%, rgb(244, 92, 67) 100%);
+  --shadow: 0px 0px 20px 0px rgb(132 144 255/20%);
+}
+
+/* ==============================
+        Reuseable Section
+ ============================== */
+
+span {
+  font-family: Poppins;
+  font-weight: 700;
+  color: #bdc1c7;
+}
+
+p {
+  line-height: 1.3;
+}
+
+h1 {
+  font-family: "Amiri Quran", serif;
+  font-size: 4rem;
+  padding-bottom: 20%;
+  margin-left: 60px;
+}
+
+h2 {
+  font-size: 6rem;
+  font-family: "Amiri Quran", serif;
+  margin-left: 10%;
+}
+
+h3 {
+  font-size: 1rem;
+  font-family: "Amiri Quran", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 50%;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: rgb(61, 95, 130) 0px 20px 30px -10px;
+}
+
+.grid-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 130px;
+  margin-left: 40px;
+  color: var(--helper-tint);
+  text-decoration: none;
+  position: relative;
+  background-color: transparent;
+  border: 1px solid firebrick;
+  border-radius: 6px;
+  padding: 19px 65px;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 800;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -37%;
+  left: 2%;
+  width: 100%;
+  height: 120%;
+  z-index: -1 !important;
+  background-color: var(--bgcolor);
+  transition: all 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+  transform: translate3d(0, -100%, 0) skew(-10deg, -10deg);
+}
+
+.btn:hover::before {
+  top: 70px;
+  left: -9px;
+  height: 200%;
+  width: 200%;
+  transition: all 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+btn:hover {
+  color: var(--hover);
+}
+
+/* ===========================
+    Scroll to Top Section
+=============================*/
+
+.scrollTop-style {
+  position: fixed;
+  right: 1.7%;
+  bottom: 5%;
+  z-index: 1;
+}
+
+.scrollTop-style i {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  background: var(--bgcolor);
+  color: #fff;
+  padding-top: 0.9rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* ======================================
+        Header and Hero Section
+====================================== */
+
+header {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s linear;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  color: var(--helper-tint);
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 10px;
+  padding-left: 10%;
+  z-index: 1;
+}
+
+.nav-links {
+  background-color: var(--bgcolor);
+  padding: 10px 20px;
+  border-bottom-left-radius: 18px;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.nav-links ul li a {
+  color: var(--helper-tint);
+  font-size: 1.2rem;
+  transition: color 1s ease-out 60ms;
+}
+
+.nav-links ul li a:hover {
+  color: var(--heading);
+  transition: color 1s ease-in 60ms;
+}
+
+.left-sidebar {
+  width: 20%;
+  height: 100%;
+  background: var(--bgcolor);
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.section-hero {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 0 10%;
+  margin-top: 5%;
+}
+
+.section-hero-image {
+  flex-basis: 40%;
+}
+
+.hero-image {
+  filter: grayscale(0);
+  transition: filter 1s;
+}
+
+.hero-image:hover {
+  filter: grayscale(1);
+}
+
+.section-hero-data {
+  flex-basis: 55%;
+  border-left: 1px solid firebrick;
+}
+
+.section-hero-para {
+  width: 100%;
+  text-align: center;
+  margin-left: 60px;
+  color: var(--color);
+  font-size: 1rem;
+}
+
+.mobile-navbar .fa-regular {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  font-family: "Font Awesome 6.2.0 Free";
+  font-weight: 400;
+}
+
+/* ==========================
+Social Media Links section
+=========================== */
+
+.social-links {
+  display: flex;
+  cursor: pointer;
+}
+
+.social-links .icons {
+  margin: 30px 60px;
+}
+
+.social-links i {
+  color: #fff;
+  font-size: 1.4rem;
+  padding-right: 22px;
+  transition: color 1s ease-out 60ms;
+}
+
+.social-links i:hover {
+  color: var(--bgcolor);
+}
+
+/* ========================
+Section About Me 
+==========================*/
+
+.about-Us {
+  background: var(--bg);
+  padding: 5rem 0;
+  overflow: hidden;
+  transition: all 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+#row {
+  display: flex;
+  max-width: 100%;
+}
+
+/* ================  About-Me Left column ================== */
+
+.about-Us .left-col {
+  font-family: "Rubik", sans-serif;
+  margin-left: 180px;
+  font-size: 30px;
+  width: 10%;
+  line-height: 1.2;
+  text-align: right !important;
+}
+
+.about-Us .left-col .item {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.about-Us .icon {
+  color: var(--bgcolor);
+  font-size: 2.1rem;
+}
+.num {
+  margin-top: 15px;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.title {
+  color: var(--color);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==================  About-Me Right Column =====================*/
+
+.about-Us .right-col {
+  margin-left: 60px;
+  width: 63%;
+  border-left: 1px solid firebrick;
+}
+
+.about-Us .right-col p {
+  margin-left: 40px;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  padding-top: 30px;
+}
+
+/* =============================
+         Bio-Data Section 
+==============================*/
+
+.section-bio {
+  background: var(--footer-bg);
+  padding: 3rem 8.5rem;
+  transition: all 0.3s linear;
+}
+
+.bio-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.common-heading {
+  font-size: 4rem;
+  margin: 0;
+  padding: 2rem 0;
+  letter-spacing: 0.1rem;
+  color: #fff;
+}
+
+.Bio-Data p {
+  font-size: 1rem;
+  color: var(--color);
+  font-weight: 400;
+  width: 100%;
+}
+
+/* ===================================
+          Bio-Data Stats
+====================================*/
+
+.bio-data-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.bio-stats h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ======================================
+           Gray stat 100%
+====================================== */
+
+.bio-progress-bar {
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--color);
+  position: relative;
+  border-radius: 10rem;
+}
+
+/* ======================================
+   Red stat According to Percentage%
+====================================== */
+
+.bio-progress-bar::before {
+  content: "";
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 80%;
+  background-color: var(--bgcolor);
+  position: absolute;
+  border-radius: 10rem;
+}
+
+.bio-progress-1::before {
+  width: 96%;
+}
+
+.bio-progress-2::before {
+  width: 90%;
+}
+
+.bio-progress-3::before {
+  width: 75%;
+}
+
+/* ======================================
+        Percentage in box
+====================================== */
+
+.bio-progress-bar span {
+  position: absolute;
+  padding: 0.4rem;
+  font-weight: 800;
+  display: inline-block;
+  color: #fff;
+  top: 0.7rem;
+  left: 76.4%;
+  background-color: var(--bgcolor);
+}
+
+.bio-progress-1 span {
+  left: 92.5%;
+}
+
+.bio-progress-2 span {
+  left: 86.4%;
+}
+
+.bio-progress-3 span {
+  left: 71.5%;
+}
+
+/* ======================================
+      Carot above percentage box
+====================================== */
+
+.bio-progress-bar::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: 0.5rem solid transparent;
+  top: -4px;
+  left: 78.3%;
+  border-bottom-color: var(--bgcolor);
+}
+
+.bio-progress-1::after {
+  left: 94.3%;
+}
+
+.bio-progress-2::after {
+  left: 88.2%;
+}
+
+.bio-progress-3::after {
+  left: 73.3%;
+}
+
+/* =============================
+       Project Section 
+==============================*/
+
+.section-project {
+  transition: all 0.7s linear;
+}
+
+.section-project .Bio-Data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-project p {
+  max-width: 40rem;
+  text-align: center;
+}
+
+.p-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-bottom: 5rem;
+}
+
+.p-btn:hover {
+  transform: translateY(-2rem);
+}
+
+.project-images {
+  gap: 5rem;
+  padding: 8rem 4rem;
+}
+
+.project-images img {
+  width: 100%;
+  border-radius: 0.3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-overlay .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgcolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: all 0.3s linear;
+  border-radius: 0.3rem;
+  opacity: 0;
+}
+
+.img-overlay:hover > .overlay {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+/* ===========================
+        My Work Section
+=============================*/
+
+.section-work-data {
+  background-color: var(--bgcolor);
+  text-align: center;
+  padding-bottom: 2.6rem;
+  color: #fff;
+  transition: all 0.7s linear;
+}
+
+.counter-numbers {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.section-work-data p {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* =============================
+      Services Section 
+==============================*/
+
+.services-section {
+  background: var(--bg);
+  padding: 4rem 3rem;
+  transition: all 0.3s linear;
+}
+
+.services-section .Bio-Data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-box {
+  margin: 3rem;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0px 0px 10px 1px var(--bgcolor);
+}
+
+.service-box:hover,
+.service-box:active {
+  transform: translateY(-0.5rem);
+}
+
+.service-icons {
+  font-size: 2rem;
+  background-color: var(--bgcolor);
+  display: inline-block;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  padding: 1.1rem 1.1rem;
+  position: relative;
+  color: #fff;
+  animation: water-wave 3s linear infinite;
+}
+
+.service-icons::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  background: transparent;
+  border: 1px solid var(--heading);
+  animation: water-wave 3s linear infinite;
+}
+
+@keyframes water-wave {
+  0% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+  50% {
+    border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+  }
+  100% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70;
+  }
+}
+
+/* =============================
+      Our Testimonial Section 
+==============================*/
+
+.section-testimonial {
+  padding: 2rem 3rem;
+  background: var(--footer-bg);
+  transition: all 0.3s linear;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 0.9rem;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-client-msg {
+  padding: 3rem 6rem;
+  border-radius: 1rem;
+  text-align: left;
+  box-shadow: var(--shadow);
+  width: 80%;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.45;
+  position: relative;
+  color: #b9b5b5;
+}
+
+.swiper-client-msg::before {
+  content: open-quote;
+  font-size: 80px;
+  position: absolute;
+  left: 3rem;
+  top: 0.5rem;
+  color: #7a7a7a;
+}
+
+.swiper-client-msg::after {
+  content: close-quote;
+  font-size: 80px;
+  position: absolute;
+  right: 5rem;
+  bottom: -1.5rem;
+  color: #7a7a7a;
+}
+
+.swiper-slide img {
+  height: auto;
+  max-width: 15rem;
+  border-radius: 50%;
+  border: 1px solid var(--heading);
+  margin: 2rem 0;
+}
+
+.client-data {
+  text-align: center;
+  padding-top: 3.3rem;
+  margin-left: -13rem;
+}
+
+/* =============================
+        Contact-Me Section 
+==============================*/
+
+.contact {
+  padding: 5rem 0;
+  transition: all 0.3s linear;
+}
+
+#row1 {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding-left: 8.5%;
+}
+
+/* =================  Contact-Me (Left column) =================*/
+
+.contact .left-col {
+  line-height: 1.2;
+  text-align: right !important;
+  width: 17%;
+}
+
+.contact .left-col .item {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+#row1 .icon {
+  color: var(--bgcolor);
+  font-size: 1.9rem;
+  margin-bottom: 17px;
+}
+
+#row1 .title {
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ===============  Contact-Me (Contact-Form) ===================*/
+
+.contact .contact-form {
+  margin-left: 40px;
+  padding: 40px;
+  border-left: 1px solid firebrick;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.contact-form label {
+  font-size: 20px;
+  margin-bottom: 45px;
+  font-weight: 800;
+  font-family: rubik;
+}
+
+input[type="text"],
+[type="email"] {
+  width: 120%;
+  height: 70px;
+  outline: none;
+  font-family: Rubik;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-weight: 300;
+  color: var(--color);
+  padding-left: 32px;
+  background-color: transparent;
+  border: 1px solid firebrick;
+  border-radius: 3px;
+}
+
+textarea {
+  width: 120%;
+  padding-top: 17px;
+  outline: none;
+  font-family: Rubik;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: 300;
+  color: var(--color);
+  padding-left: 32px;
+  background-color: transparent;
+  border: 1px solid firebrick;
+  border-radius: 3px;
+}
+
+/* ===========================
+Footer Section
+=============================*/
+
+.container {
+  background-color: var(--footer-bg);
+  padding: 50px 40px 50px;
+  display: flex;
+  align-items: center;
+  transition: all 0.7s linear;
+}
+
+.container .icons {
+  margin: 30px 60px;
+  padding-right: 12%;
+}
+
+.container .icons i {
+  color: #fff;
+  font-size: 1.4rem;
+  padding-right: 20px;
+  transition: color 1s ease-out 60ms;
+}
+
+.container .icons i:hover {
+  color: var(--bgcolor);
+}
+
+.container .copy-right {
+  font-size: 1.1rem;
+  margin-left: 40px;
+  margin-right: 100px;
+  font-family: rubik;
+  color: #fff;
+}
+
+.hosted {
+  font-size: 1rem;
+  font-family: rubik;
+}
